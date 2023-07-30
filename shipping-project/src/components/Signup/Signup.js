@@ -59,7 +59,7 @@ export default function Signup(){
                                         if(confirmPassword !== ''){
                                             if(password === confirmPassword){
                                                 let data = {
-                                                    username:username,firstname:firstname,lastname:lastname,mobileNumber:phoneNumber,gstRegNumber:gstInNumber,email:email,password:password
+                                                  userName:username,firstName:firstname,lastName:lastname,mobileNumber:phoneNumber,gstRegNumber:gstInNumber,emailId:email,password:password
                                                 }
                                                 let res = await signupService(data)
                                                 console.log(res)

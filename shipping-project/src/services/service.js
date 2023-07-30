@@ -1,18 +1,17 @@
 import axios from "axios";
 
-let baseURL = 'https://cbw.api.aurigraph.io/custom/form/user'
+let baseURL = 'https://cbw.api.aurigraph.io/custom/form'
 
 export const loginService=(data)=>{
-    let response  = axios.post(`${baseURL}/login`,data)
+    let response  = axios.post(`${baseURL}/user/login`,data)
     return response
 }
 
 export const signupService=(data)=>{
-    let response  = axios.post(`${baseURL}/registration`,data)
+    let response  = axios.post(`${baseURL}/user/registration`,data)
     return response
 }
 export const formData=(username)=>{
-    console.log(username)
-    let response  = axios.post('https://aademomgmtnodes.aurigraph.io/smartcontract/userDetails',username)
+    let response  = axios.post('https://cbw.api.aurigraph.io/custom/form/userDetails',username)
     return response
 }

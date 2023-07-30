@@ -4,16 +4,22 @@ import Header from "../Header/Header";
 
 export default function AnnecaureA() {
   const [data,setData]=useState()
+  const [panNumber,setPan] = useState()
   useEffect(()=>{
     const getPrepopulatedData=async()=>{
       let username = localStorage.getItem('username')
-      let data = await formData({username:username})
+      let data = await formData({userName:username})
       setData(data)
+      getPanName()
     }
     getPrepopulatedData()
   },[])
   
-  console.log(data)
+  const getPanName=()=>{
+    let len = data?.data?.gstRegId[0].length
+    let name = data?.data?.gstRegId[0].slice(2, len-2);
+    setPan(name)
+  }
 
   return (
     <div className="bg-gray-300 h-screen ">
@@ -34,7 +40,7 @@ export default function AnnecaureA() {
                 id="username"
                 type="text"
                 placeholder="Username"
-                value={data?.data?.firstName}
+                value={data?.data?.apiSetuGstResponse?.tradeName}
               />
             </div>
             <div class="mb-4 flex items-center mt-2">
@@ -49,7 +55,7 @@ export default function AnnecaureA() {
                 id="username"
                 type="text"
                 placeholder="Username"
-                value={data?.data?.panNumber}
+                value={panNumber}
               />
             </div>
             <div class="mb-4 flex items-center mt-2">
