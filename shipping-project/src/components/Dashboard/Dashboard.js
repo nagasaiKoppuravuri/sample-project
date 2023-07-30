@@ -1,5 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
 
 export default function Dashboard() {
     const navigate = useNavigate();
@@ -8,9 +9,7 @@ export default function Dashboard() {
     }
   return (
     <div>
-      <div className="text-center font-bold text-2xl bg-stone-400 h-14 flex items-center justify-center">
-        <h1>Welcom to Dashboard</h1>
-      </div>
+      <Header isLogout = {true} />
       <div className="flex justify-between m-5 w-6/12 ml-auto mr-auto" >
        <div className="border p-5 rounded-lg bg-orange-400 text-white cursor-pointer" id="annexure/a" onClick={handleClickButton}>
        Annexure-A
